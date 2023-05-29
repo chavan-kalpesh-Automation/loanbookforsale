@@ -27,14 +27,14 @@ public class HomePageTest extends TestBase {
 	}
 
 //Test Cases
-	@Test
+	@Test(priority=1)
 	public void homePageTitleTest() {
 		String title = homepage.validateHomePageTitle();
 		Assert.assertEquals(title, "Loan Book For Sale - buy a trail book",
 				"Home Page Title Does Not match with actual ");
 	}
 
-	@Test
+	@Test(priority=2)
 	public void loanbookLogoTest() {
 		boolean logo = homepage.verifyLogoOfThePage();
 		Assert.assertTrue(logo);
