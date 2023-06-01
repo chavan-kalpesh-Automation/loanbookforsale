@@ -19,7 +19,7 @@ public class TestBase {
 			prop = new Properties();
 
 			FileInputStream fis = new FileInputStream(
-					"C:\\Users\\VISHAL\\loanbookforsale\\src\\main\\java\\loanbookforsale\\qa\\confige\\confige.properties");
+					"C:\\Users\\VISHAL\\git\\repository2\\loanbookforsale\\loanbookforsale\\src\\main\\java\\loanbookforsale\\qa\\confige\\confige.properties");
 			prop.load(fis);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

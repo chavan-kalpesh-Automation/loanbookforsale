@@ -38,7 +38,6 @@ public class HomePageTest extends TestBase {
 	public void loanbookLogoTest() {
 		boolean logo = homepage.verifyLogoOfThePage();
 		Assert.assertTrue(logo);
-
 	}
 
 	@Test(priority = 3)
