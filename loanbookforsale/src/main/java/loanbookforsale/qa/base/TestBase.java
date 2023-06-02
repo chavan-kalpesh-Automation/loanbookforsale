@@ -18,8 +18,15 @@ public class TestBase {
 
 			prop = new Properties();
 
-			FileInputStream fis = new FileInputStream(
-					"C:\\Users\\VISHAL\\git\\repository2\\loanbookforsale\\loanbookforsale\\src\\main\\java\\loanbookforsale\\qa\\confige\\confige.properties");
+			//FileInputStream fis = new FileInputStream(
+			//		"C:\\Users\\VISHAL\\git\\repository2\\loanbookforsale\\loanbookforsale\\src\\main\\java\\loanbookforsale\\qa\\confige\\confige.properties");
+			
+						Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
+			Path filePath = Paths.get(root.toString(),"src", "main", "java","loanbookforSale","qa","confige", "confige.properties");
+//			System.out.println(filePath);
+			
+			FileInputStream fis = new FileInputStream(filePath.toString());
+			
 			prop.load(fis);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
