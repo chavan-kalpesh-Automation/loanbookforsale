@@ -3,6 +3,9 @@ package loanbookforsale.qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -18,16 +21,20 @@ public class TestBase {
 
 			prop = new Properties();
 
-			//FileInputStream fis = new FileInputStream(
-			//		"C:\\Users\\VISHAL\\git\\repository2\\loanbookforsale\\loanbookforsale\\src\\main\\java\\loanbookforsale\\qa\\confige\\confige.properties");
+//			FileInputStream fis = new FileInputStream(
+//					"C:\\Users\\VISHAL\\git\\repository2\\loanbookforsale\\loanbookforsale\\src\\main\\java\\loanbookforsale\\qa\\confige\\confige.properties");
 			
+		
+			//this file path gives the global path to the system runs it any where
 						Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
 			Path filePath = Paths.get(root.toString(),"src", "main", "java","loanbookforSale","qa","confige", "confige.properties");
-//			System.out.println(filePath);
+
+			//			System.out.println(filePath);
 			
 			FileInputStream fis = new FileInputStream(filePath.toString());
 			
 			prop.load(fis);
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -40,6 +47,7 @@ public class TestBase {
 		String chromeDriverPath = prop.getProperty("chromedriverpath");
 		String fireFoxDriverPath = prop.getProperty("firefoxdriverpath");
 		if (browsername.equals("chrome")) {
+			
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			driver = new ChromeDriver();
 		}
@@ -49,6 +57,7 @@ public class TestBase {
 			driver = new ChromeDriver();
 
 		}
+		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		

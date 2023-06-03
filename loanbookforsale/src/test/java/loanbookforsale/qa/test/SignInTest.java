@@ -1,10 +1,19 @@
 package loanbookforsale.qa.test;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 
-public class SignInTest {
-	@Test
-	public void testcase1() {
+import loanbookforsale.qa.base.TestBase;
 
+public class SignInTest extends TestBase{
+	
+	public SignInTest() {
+		super();
+		
 	}
+	@BeforeMethod
+	public void setup() {
+		initialization();
+		
+	}
+	
 }
