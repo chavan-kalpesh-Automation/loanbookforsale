@@ -1,5 +1,6 @@
 package loanbookforsale.qa.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,6 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import loanbookforsale.qa.base.TestBase;
 
 public class SignInPage extends TestBase {
+	
+	@FindBy(xpath="//a[text()='Sign In']")
+	WebElement signInBtn;
 
 	@FindBy(xpath = "//div[@class='modal-body']//h2")
 	WebElement loginText;
@@ -35,15 +39,23 @@ public class SignInPage extends TestBase {
 	}
 
 	// Page Actions
+	
+	
 
 	public String validateSignPageTitle() {
 		return driver.getTitle();
 
 	}
 
-	public boolean verifyLoginText() {
-		loginText.isDisplayed();
-		return true;
-
+	public HomePage login(String un,String pwd) {
+		userName.sendKeys(un);
+		passWord.sendKeys(pwd);
+		loginBtn.click();
+		//If login button not visible on web page then we have to scroll web page up-to login button 
+//		JavascriptExecutor  js=(JavascriptExecutor )driver;
+//		js.executeScript("arguments[0].click();", loginBtn );
+		return new HomePage();
+		
+		
 	}
 }

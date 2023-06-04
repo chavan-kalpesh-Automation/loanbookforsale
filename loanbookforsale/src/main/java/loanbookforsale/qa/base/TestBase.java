@@ -24,8 +24,10 @@ public class TestBase {
 //			FileInputStream fis = new FileInputStream(
 //					"C:\\Users\\VISHAL\\git\\repository2\\loanbookforsale\\loanbookforsale\\src\\main\\java\\loanbookforsale\\qa\\confige\\confige.properties");
 			
+//			FileInputStream fis=new FileInputStream("/loanbookforsale/src/main/java/loanbookforsale/qa/confige/confige.properties");
+			
 		
-			//this file path gives the global path to the system runs it any where
+//			this file path gives the global path to the system runs it any where
 						Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
 			Path filePath = Paths.get(root.toString(),"src", "main", "java","loanbookforSale","qa","confige", "confige.properties");
 
