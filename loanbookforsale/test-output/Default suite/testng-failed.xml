@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="loanbookforsale.qa.test.HomePageTest">
+      <class name="loanbookforsale.qa.test.SignInTest">
         <methods>
-          <include name="loanbookLogoTest"/>
+          <include name="loginTest"/>
+          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="signInBtnTest"/>
-          <include name="homePageTitleTest"/>
-          <include name="teardown"/>
+          <include name="signInPageTitleTest"/>
         </methods>
-      </class> <!-- loanbookforsale.qa.test.HomePageTest -->
+      </class> <!-- loanbookforsale.qa.test.SignInTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
