@@ -22,12 +22,11 @@ public class SignInTest extends TestBase {
 	@BeforeMethod
 	public void setup() {
 		initialization();
-		
-		signInPagee =new SignInPage();
-		
-		
+
+		signInPagee = new SignInPage();
+
 		homepage = new HomePage();
-		signInPagee=homepage.signinbtn();	
+		signInPagee = homepage.signinbtn();
 	}
 
 	// TestCases
@@ -41,6 +40,10 @@ public class SignInTest extends TestBase {
 	public void loginTest() {
 		homepage = signInPagee.login(prop.getProperty("username"), prop.getProperty("password"));
 
+	}
+	@Test
+	public void sampleTest() {
+		System.out.println("sampple commit");
 	}
 
 	@AfterMethod
