@@ -23,10 +23,11 @@ public class SignInTest extends TestBase {
 	public void setup() {
 		initialization();
 		
-		signInPagee =homepage.signinbtn();
+		signInPagee =new SignInPage();
+		
 		
 		homepage = new HomePage();
-		
+		signInPagee=homepage.signinbtn();	
 	}
 
 	// TestCases
