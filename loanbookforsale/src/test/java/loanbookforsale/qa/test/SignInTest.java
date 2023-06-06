@@ -41,10 +41,10 @@ public class SignInTest extends TestBase {
 		homepage = signInPagee.login(prop.getProperty("username"), prop.getProperty("password"));
 
 	}
-	@Test
-	public void sampleTest() {
-		System.out.println("sampple commit");
-	}
+
+	
+
+	
 
 	@AfterMethod
 	public void tearDown() {
