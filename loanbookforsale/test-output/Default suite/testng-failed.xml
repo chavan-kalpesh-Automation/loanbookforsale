@@ -5,10 +5,9 @@
     <classes>
       <class name="loanbookforsale.qa.test.SignInTest">
         <methods>
-          <include name="loginTest"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="signInPageTitleTest"/>
+          <include name="afterLoginUsrNameTest"/>
         </methods>
       </class> <!-- loanbookforsale.qa.test.SignInTest -->
     </classes>

@@ -30,8 +30,8 @@ public class SignInPage extends TestBase {
 	@FindBy(xpath = "//a[@class='link d-block d-sm-inline-block text-sm-left text-center']")
 	WebElement register;
 
-	@FindBy(xpath = "")
-	WebElement ref;
+	@FindBy(xpath = "//li[@class='login-item']//span")
+	WebElement loginUsrNameLable;
 
 	// Initialization of page Object
 	public SignInPage() {
@@ -57,5 +57,8 @@ public class SignInPage extends TestBase {
 		return new HomePage();
 		
 		
+	}
+	public boolean validateUsrNameLable() {
+		return loginUsrNameLable.isDisplayed();
 	}
 }

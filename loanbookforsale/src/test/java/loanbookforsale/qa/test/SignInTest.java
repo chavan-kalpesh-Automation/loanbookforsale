@@ -41,10 +41,12 @@ public class SignInTest extends TestBase {
 		homepage = signInPagee.login(prop.getProperty("username"), prop.getProperty("password"));
 
 	}
+	@Test 
+	public void afterLoginUsrNameTest() {
+		homepage = signInPagee.login(prop.getProperty("username"), prop.getProperty("password"));
+		Assert.assertTrue(signInPagee.validateUsrNameLable());
+	}
 
-	
-
-	
 
 	@AfterMethod
 	public void tearDown() {
