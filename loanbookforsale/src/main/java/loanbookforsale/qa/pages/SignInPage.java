@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import loanbookforsale.qa.base.TestBase;
 
 public class SignInPage extends TestBase {
-	
-	@FindBy(xpath="//a[text()='Sign In']")
+
+	@FindBy(xpath = "//a[text()='Sign In']")
 	WebElement signInBtn;
 
 	@FindBy(xpath = "//div[@class='modal-body']//h2")
@@ -39,25 +39,22 @@ public class SignInPage extends TestBase {
 	}
 
 	// Page Actions
-	
-	
 
 	public String validateSignPageTitle() {
 		return driver.getTitle();
-
 	}
 
-	public HomePage login(String un,String pwd) {
+	public HomePage login(String un, String pwd) {
 		userName.sendKeys(un);
 		passWord.sendKeys(pwd);
 		loginBtn.click();
-		//If login button not visible on web page then we have to scroll web page up-to login button 
+		// If login button not visible on web page then we have to scroll web page up-to
+		// login button
 //		JavascriptExecutor  js=(JavascriptExecutor )driver;
 //		js.executeScript("arguments[0].click();", loginBtn );
 		return new HomePage();
-		
-		
 	}
+
 	public boolean validateUsrNameLable() {
 		return loginUsrNameLable.isDisplayed();
 	}
