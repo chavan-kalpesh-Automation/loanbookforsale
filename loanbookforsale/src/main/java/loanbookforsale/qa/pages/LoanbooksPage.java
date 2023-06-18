@@ -52,6 +52,13 @@ public class LoanbooksPage extends TestBase{
 	public boolean verifyloanbookpagetitletext() {
 		return buyloanbookpagetitle.isDisplayed();
 	}
-	
+	public void buyloanbooksearch(String locations,String pricemin,String pricemax,String aggregators) {
+		location.sendKeys(locations);
+		minprice.sendKeys(pricemin);
+		maxprice.sendKeys(pricemax);
+		aggregator.sendKeys(aggregators);
+		searchbtn.click();
+		
+	}
 	
 }
