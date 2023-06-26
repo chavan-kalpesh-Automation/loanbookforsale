@@ -11,6 +11,8 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class TestBase {
 	public static Properties prop;
 	public static WebDriver driver;
@@ -50,7 +52,9 @@ public class TestBase {
 		String fireFoxDriverPath = prop.getProperty("firefoxdriverpath");
 		if (browsername.equals("chrome")) {
 			
-			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+			// System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+			
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
 
