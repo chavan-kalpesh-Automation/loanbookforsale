@@ -12,6 +12,12 @@ import loanbookforsale.qa.base.TestBase;
 public class TestUtil extends TestBase{
 
 
+
+
+    public void switchiframe(){
+        driver.switchTo().frame("framename");
+    }
+
 public  void takeScreenshotAtEndOfTestCase(){
 File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
