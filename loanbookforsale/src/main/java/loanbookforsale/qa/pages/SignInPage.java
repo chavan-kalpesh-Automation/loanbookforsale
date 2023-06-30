@@ -47,11 +47,12 @@ public class SignInPage extends TestBase {
 	public HomePage login(String un, String pwd) {
 		userName.sendKeys(un);
 		passWord.sendKeys(pwd);
-		loginBtn.click();
+		// loginBtn.click();
 		// If login button not visible on web page then we have to scroll web page up-to
 		// login button
-//		JavascriptExecutor  js=(JavascriptExecutor )driver;
-//		js.executeScript("arguments[0].click();", loginBtn );
+		
+		JavascriptExecutor  js=(JavascriptExecutor )driver;
+		js.executeScript("arguments[0].click();", loginBtn );
 		return new HomePage();
 	}
 

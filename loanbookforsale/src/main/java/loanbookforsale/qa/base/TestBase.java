@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -48,13 +49,15 @@ public class TestBase {
 
 	public static void initialization() {
 		String browsername = prop.getProperty("browser");
-		String chromeDriverPath = prop.getProperty("chromedriverpath");
+		// String chromeDriverPath = prop.getProperty("chromedriverpath");
 		String fireFoxDriverPath = prop.getProperty("firefoxdriverpath");
+
 		if (browsername.equals("chrome")) {
 			
 			// System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			
 			WebDriverManager.chromedriver().setup();
+			
 			driver = new ChromeDriver();
 		}
 
