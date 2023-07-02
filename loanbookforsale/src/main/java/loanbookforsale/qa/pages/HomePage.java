@@ -55,6 +55,9 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//div[@class='pricing-wrap  standard-pr ']//a")
 	WebElement primiumad;
 
+	@FindBy(xpath="//a[text()=' Place Ad']")
+	WebElement placeAd;
+
 	// Initializing the page objects
 
 	public HomePage() {
@@ -88,9 +91,10 @@ public class HomePage extends TestBase {
 		
 		return new SignInPage();
 	}
-	
-	
-	
-	
-	
+	public PlaceAdPage	clickonplaceadbtn(){
+		placeAd.click();
+		return new PlaceAdPage();
+
+	}
+		
 }
