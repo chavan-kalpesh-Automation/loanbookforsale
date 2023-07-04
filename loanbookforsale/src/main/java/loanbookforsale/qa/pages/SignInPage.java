@@ -44,12 +44,13 @@ public class SignInPage extends TestBase {
 		return driver.getTitle();
 	}
 
-	public HomePage login(String un, String pwd) {
+	public HomePage login(String un, String pwd) throws InterruptedException {
 		userName.sendKeys(un);
 		passWord.sendKeys(pwd);
 		// loginBtn.click();
 		// If login button not visible on web page then we have to scroll web page up-to
 		// login button
+		Thread.sleep(2000);
 		
 		JavascriptExecutor  js=(JavascriptExecutor )driver;
 		js.executeScript("arguments[0].click();", loginBtn );

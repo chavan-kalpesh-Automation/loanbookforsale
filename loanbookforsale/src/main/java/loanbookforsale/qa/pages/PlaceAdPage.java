@@ -43,14 +43,17 @@ public class PlaceAdPage extends TestBase {
 @FindBy(xpath = "//input[@name='name']")
 	WebElement savebtn;  
 
+	//initialization of page objects
 public PlaceAdPage(){
 	PageFactory.initElements(driver,this);
 
 }
+
 //Page Actions
-public void verifyTitleofPage(){
-	
+public String verifyPlaceAsPageTitle(){
+return driver.getTitle();
 }
+
 
 
 
