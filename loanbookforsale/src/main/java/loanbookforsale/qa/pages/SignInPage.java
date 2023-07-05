@@ -1,15 +1,9 @@
 package loanbookforsale.qa.pages;
 
-import java.beans.Visibility;
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import loanbookforsale.qa.base.Helper;
 import loanbookforsale.qa.base.TestBase;
 
@@ -59,12 +53,18 @@ public class SignInPage extends TestBase {
 		// loginBtn.click();
 		
 		
-		Helper help =new Helper();
-		help.explicitWaitOnVisibility_Custom(driver, reCaptchalocator, 1);
+		
 			
 		// If login button not visible on web page then we have to scroll web page up-to
 		JavascriptExecutor  js=(JavascriptExecutor )driver;
-		js.executeScript("arguments[0].click();", loginBtn );
+		js.executeScript("arguments[0].scrollIntoView(true);", loginBtn );
+
+		Helper help =new Helper();
+		help.explicitWaitOnVisibility_Custom(driver, reCaptchalocator, 3);
+
+		loginBtn.click();
+
+
 		return new HomePage();
 	}
 
