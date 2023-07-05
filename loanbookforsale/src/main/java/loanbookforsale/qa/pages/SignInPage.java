@@ -1,10 +1,16 @@
 package loanbookforsale.qa.pages;
 
+import java.beans.Visibility;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import loanbookforsale.qa.base.Helper;
 import loanbookforsale.qa.base.TestBase;
 
 public class SignInPage extends TestBase {
@@ -33,6 +39,9 @@ public class SignInPage extends TestBase {
 	@FindBy(xpath = "//li[@class='login-item']//span")
 	WebElement loginUsrNameLable;
 
+	@FindBy(xpath = "")
+	WebElement reCaptchalocator;
+
 	// Initialization of page Object
 	public SignInPage() {
 		PageFactory.initElements(driver, this);
@@ -44,14 +53,16 @@ public class SignInPage extends TestBase {
 		return driver.getTitle();
 	}
 
-	public HomePage login(String un, String pwd) throws InterruptedException {
+	public HomePage login(String un, String pwd)  {
 		userName.sendKeys(un);
 		passWord.sendKeys(pwd);
 		// loginBtn.click();
-		// If login button not visible on web page then we have to scroll web page up-to
-		// login button
-		Thread.sleep(2000);
 		
+		
+		Helper help =new Helper();
+		help.explicitWaitOnVisibility_Custom(driver, reCaptchalocator, 1);
+			
+		// If login button not visible on web page then we have to scroll web page up-to
 		JavascriptExecutor  js=(JavascriptExecutor )driver;
 		js.executeScript("arguments[0].click();", loginBtn );
 		return new HomePage();
