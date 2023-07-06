@@ -50,7 +50,8 @@ public PlaceAdPage(){
 }
 
 //Page Actions
-public String verifyPlaceAsPageTitle(){
+public String  verifyPlaceAdPageTitle(){
+	
 return driver.getTitle();
 }
 
