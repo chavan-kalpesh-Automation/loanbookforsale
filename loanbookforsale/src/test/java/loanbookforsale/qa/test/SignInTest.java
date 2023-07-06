@@ -24,9 +24,10 @@ public class SignInTest extends TestBase {
 		initialization();
 
 		signInPagee = new SignInPage();
-
 		homepage = new HomePage();
+
 		signInPagee = homepage.signinbtn();
+
 	}
 
 	// TestCases
@@ -36,7 +37,7 @@ public class SignInTest extends TestBase {
 		Assert.assertEquals("Login", title, "Title of SignInPage Not Matched to Actual Title");
 	}
 
-	@Test(priority = 2)
+	@Test()
 	public void loginTest() {
 		homepage = signInPagee.login(prop.getProperty("username"), prop.getProperty("password"));
 

@@ -15,6 +15,7 @@ public class PlaceAdPageTest extends TestBase {
 PlaceAdPage placeadpage ;
 HomePage homepage;
 SignInPage signInPagee;
+
 public PlaceAdPageTest(){
     super();
 
@@ -27,13 +28,14 @@ public void setup() throws InterruptedException{
     homepage = signInPagee.login(prop.getProperty("username"), prop.getProperty("password"));
     
     placeadpage = new  PlaceAdPage(); 
+
     placeadpage=homepage.clickonplaceadbtn();
 
 }
 
 @Test
 public void verifyPlaceAdPageTitleTest(){
-        String placeAdPageTitle =placeadpage.verifyPlaceAsPageTitle();
+        String placeAdPageTitle =placeadpage.verifyPlaceAdPageTitle();
         Assert.assertEquals(placeAdPageTitle,"Add a Loanbook","Place Ad Page Title Not Matched");
    
 }
