@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import loanbookforsale.qa.base.Helper;
 import loanbookforsale.qa.base.TestBase;
 
 public class HomePage extends TestBase {
@@ -13,7 +14,7 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//img[@class='logo']")
 	WebElement loanbooklogo;
 
-	@FindBy(xpath = "//a[text()='Sign In']") //
+	@FindBy(xpath = "//a[text()='Sign In']") 
 	WebElement signInBtn;
 
 	@FindBy(xpath = "//li[@class='menu-item-has-children']//child::a[@href='https://loanbookforsale.com.au/loanbook-opportunity?layout=full&type=loanbook']")
@@ -88,10 +89,11 @@ public class HomePage extends TestBase {
 
 	public SignInPage signinbtn() {
 		signInBtn.click();
-		
 		return new SignInPage();
 	}
 	public PlaceAdPage	clickonplaceadbtn(){
+		Helper helper=new Helper();
+		helper.explicitWaitOnVisibility_Custom(driver, placeAd, 3);
 		placeAd.click();
 		return new PlaceAdPage();
 

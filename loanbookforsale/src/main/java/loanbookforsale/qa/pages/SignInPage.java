@@ -21,8 +21,9 @@ public class SignInPage extends TestBase {
 	@FindBy(xpath = "//input[@id='password']")
 	WebElement passWord;
 
-	@FindBy(xpath = "//div[@class='form-group']//button")
+	@FindBy(xpath = "//div[@id='app']//button[@type='submit']")
 	WebElement loginBtn;
+	//div[@class='form-group']//button[@type='submit']
 
 	@FindBy(xpath = "//a[@class='link']")
 	WebElement forgotPassBtn;
@@ -50,25 +51,22 @@ public class SignInPage extends TestBase {
 	public HomePage login(String un, String pwd)  {
 		userName.sendKeys(un);
 		passWord.sendKeys(pwd);
-		// loginBtn.click();
-		
-		
-		
-			
+	
 		// If login button not visible on web page then we have to scroll web page up-to
 		JavascriptExecutor  js=(JavascriptExecutor )driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", loginBtn );
 
 		Helper help =new Helper();
-		help.explicitWaitOnVisibility_Custom(driver, reCaptchalocator, 3);
+		help.explicitWaitOnVisibility_Custom(driver, loginBtn, 4);
 
 		loginBtn.click();
-
-
+		
 		return new HomePage();
 	}
 
 	public boolean validateUsrNameLable() {
 		return loginUsrNameLable.isDisplayed();
 	}
+
+
 }
