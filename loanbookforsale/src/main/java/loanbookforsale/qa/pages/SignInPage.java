@@ -34,7 +34,7 @@ public class SignInPage extends TestBase {
 	@FindBy(xpath = "//li[@class='login-item']//span")
 	WebElement loginUsrNameLable;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//div[@class='rc-anchor-normal-footer']")
 	WebElement reCaptchalocator;
 
 	// Initialization of page Object
@@ -57,7 +57,7 @@ public class SignInPage extends TestBase {
 		js.executeScript("arguments[0].scrollIntoView(true);", loginBtn );
 
 		Helper help =new Helper();
-		help.explicitWaitOnVisibility_Custom(driver, loginBtn, 4);
+		help.explicitWaitOnVisibility_Custom(driver, reCaptchalocator, 4);
 
 		loginBtn.click();
 		
