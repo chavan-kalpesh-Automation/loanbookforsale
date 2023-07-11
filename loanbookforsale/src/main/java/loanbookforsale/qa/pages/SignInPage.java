@@ -54,10 +54,10 @@ public class SignInPage extends TestBase {
 	
 		// If login button not visible on web page then we have to scroll web page up-to
 		JavascriptExecutor  js=(JavascriptExecutor )driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", loginBtn );
+		js.executeScript("arguments[0].scrollIntoView(true);", loginText );
 
 		Helper help =new Helper();
-		help.explicitWaitOnVisibility_Custom(driver, reCaptchalocator, 4);
+		help.explicitWaitOnVisibility_Custom(driver, reCaptchalocator, 2);
 
 		loginBtn.click();
 		
