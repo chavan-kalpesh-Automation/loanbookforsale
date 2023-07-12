@@ -3,6 +3,7 @@ package loanbookforsale.qa.test;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
@@ -17,6 +18,8 @@ PlaceAdPage placeadpage ;
 HomePage homepage;
 SignInPage signInPagee;
 TestUtil testutil;
+
+String sheetName="loanbookforsale";
 
 public PlaceAdPageTest(){
     super();
@@ -40,6 +43,11 @@ public void verifyPlaceAdPageTitleTest(){
         String placeAdPageTitle =placeadpage.verifyPlaceAdPageTitle();
         Assert.assertEquals(placeAdPageTitle,"Add a Loanbook","Place Ad Page Title Not Matched");
    
+}
+@DataProvider
+public Object[][] getAddaLaonbookdata(){
+    Object data[][]=testutil.getTestData(sheetName);
+    return data;
 }
 
 
