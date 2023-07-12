@@ -10,11 +10,13 @@ import loanbookforsale.qa.base.TestBase;
 import loanbookforsale.qa.pages.HomePage;
 import loanbookforsale.qa.pages.PlaceAdPage;
 import loanbookforsale.qa.pages.SignInPage;
+import loanbookforsale.qa.util.TestUtil;
 
 public class PlaceAdPageTest extends TestBase {
 PlaceAdPage placeadpage ;
 HomePage homepage;
 SignInPage signInPagee;
+TestUtil testutil;
 
 public PlaceAdPageTest(){
     super();
@@ -39,6 +41,9 @@ public void verifyPlaceAdPageTitleTest(){
         Assert.assertEquals(placeAdPageTitle,"Add a Loanbook","Place Ad Page Title Not Matched");
    
 }
+
+
+
 @AfterMethod
 public void tearDown(){
     driver.quit();
