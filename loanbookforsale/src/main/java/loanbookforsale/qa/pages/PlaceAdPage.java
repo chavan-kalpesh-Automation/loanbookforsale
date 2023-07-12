@@ -55,6 +55,9 @@ public String  verifyPlaceAdPageTitle(){
 return driver.getTitle();
 }
 
+public void addLoanbookForm(){
+
+}
 
 
 
