@@ -44,8 +44,10 @@ public class TestUtil extends TestBase{
             Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
 			Path filePath = Paths.get(root.toString(),"src", "main", "java","loanbookforSale","qa","testdata", "loanbookforsale.xlsx");
 
+
+
             FileInputStream fis=new FileInputStream(filePath.toString());
-            Workbook book=WorkbookFactory.create(fis);
+             book=WorkbookFactory.create(fis);
          
         }
         catch(FileNotFoundException e){
@@ -54,7 +56,8 @@ public class TestUtil extends TestBase{
         catch(IOException e){
             e.printStackTrace();
         }
-                    Sheet sheet=book.getSheet(sheetName);
+       
+                     sheet=book.getSheet(sheetName);
          Object [] []data=new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
          for(int i=0;i<sheet.getLastRowNum();i++){
                 for(int j=0;j<sheet.getRow(0).getLastCellNum();j++){
