@@ -46,11 +46,16 @@ public void verifyPlaceAdPageTitleTest(){
 }
 @DataProvider
 public Object[][] getAddaLaonbookdata(){
-    Object data[][]=testutil.getTestData(sheetName);
+    Object data[][]=TestUtil.getTestData("Add a Loanbook data");
     return data;
 }
 
+@Test (priority=1,dataProvider="getAddaLaonbookdata")
+public void validateCreateAddLoanbook(String Title,String Content,String Location,String Latitude,String Longitude,String Price,String LoanBookSize ){
+    
+    placeadpage.addLoanbookForm(Title, Content, Location, Latitude, Longitude, Price, LoanBookSize);    
 
+}
 
 @AfterMethod
 public void tearDown(){
