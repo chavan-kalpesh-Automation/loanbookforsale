@@ -1,9 +1,11 @@
 package loanbookforsale.qa.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import loanbookforsale.qa.base.Helper;
 import loanbookforsale.qa.base.TestBase;
 
 public class PlaceAdPage extends TestBase {
@@ -13,34 +15,37 @@ public class PlaceAdPage extends TestBase {
 @FindBy(xpath = "//input[@name='name']")
 	WebElement titlefield;
 
-@FindBy(xpath = "//input[@name='name']")
-	WebElement contentield;
+@FindBy(xpath="//div[@class='ck ck-toolbar ck-toolbar_grouping']")
+WebElement contenttoolbar;
 
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//div[@class='ck ck-editor__main']")
+	WebElement contentield;
+//div[@class='ck ck-editor__main']
+@FindBy(xpath = "//div[@id='multiple-upload']")
 	WebElement imagefield;
 
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//span[@id='select2-category_id-container']")
 	WebElement aggregatorfield;
 
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//span[@id='select2-type_id-container']")
 	WebElement categoryfield; 
 
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//input[@name='location']")
 	WebElement locationfield;  
  
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//div//input[@name='latitude']")
 	WebElement latifield; 
 
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//div//input[@name='longitude']")
 	WebElement longifield; 
     
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//div//input[@name='price']")
 	WebElement pricefield;  
 
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//div//input[@name='loan_book_size']")
 	WebElement loanbooksizefield; 
     
-@FindBy(xpath = "//input[@name='name']")
+@FindBy(xpath = "//div//button[@name='submit']")
 	WebElement savebtn;  
 
 	//initialization of page objects
@@ -55,9 +60,31 @@ public String  verifyPlaceAdPageTitle(){
 return driver.getTitle();
 }
 
-public void addLoanbookForm(){
+public void addLoanbookForm(String title,String content,String location,String lat,String longi,String price,String lbsize){
+
+	
+
+	titlefield.sendKeys(title);
+
+
+		JavascriptExecutor  javascript=(JavascriptExecutor )driver;
+		javascript.executeScript("arguments[0].scrollIntoView(true);", locationfield );
+	
+	// Helper help =new Helper();
+	// 	help.explicitWaitOnVisibility_Custom(driver, contenttoolbar, 4);
+	// 	contentield.sendKeys(content);
+	locationfield.sendKeys(location);
+// 	longifield.sendKeys(lat);
+// 	longifield.sendKeys(longi);
+// //for scrolling upto price locator 
+// 		JavascriptExecutor  javascript1=(JavascriptExecutor )driver;
+// 		javascript1.executeScript("arguments[0].scrollIntoView(true);", pricefield );
+
+// pricefield.sendKeys(price);
+// loanbooksizefield.sendKeys(lbsize);
 
 }
+
 
 
 
