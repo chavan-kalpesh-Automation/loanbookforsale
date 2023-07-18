@@ -15,10 +15,10 @@ public class PlaceAdPage extends TestBase {
 @FindBy(xpath = "//input[@name='name']")
 	WebElement titlefield;
 
-@FindBy(xpath="//div[@class='ck ck-toolbar ck-toolbar_grouping']")
+@FindBy(xpath="//div[@class='ck ck-editor__top ck-reset_all']")
 WebElement contenttoolbar;
 
-@FindBy(xpath = "//div[@class='ck ck-editor__main']")
+@FindBy(xpath = "//div//p[@class='ck-placeholder']")
 	WebElement contentield;
 //div[@class='ck ck-editor__main']
 @FindBy(xpath = "//div[@id='multiple-upload']")
@@ -66,13 +66,15 @@ public void addLoanbookForm(String title,String content,String location,String l
 
 	titlefield.sendKeys(title);
 
+		Helper help =new Helper();
+		help.explicitWaitOnVisibility_Custom(driver, contenttoolbar, 10);
 
 		JavascriptExecutor  javascript=(JavascriptExecutor )driver;
-		javascript.executeScript("arguments[0].scrollIntoView(true);", locationfield );
+		javascript.executeScript("arguments[0].scrollIntoView(true);", contenttoolbar );
 	
-	// Helper help =new Helper();
-	// 	help.explicitWaitOnVisibility_Custom(driver, contenttoolbar, 4);
-	// 	contentield.sendKeys(content);
+	contentield.sendKeys(content);
+	
+		javascript.executeScript("arguments[0].scrollIntoView(true);", location );
 	locationfield.sendKeys(location);
 // 	longifield.sendKeys(lat);
 // 	longifield.sendKeys(longi);
