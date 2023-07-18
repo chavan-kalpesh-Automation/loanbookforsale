@@ -30,7 +30,7 @@ WebElement contenttoolbar;
 @FindBy(xpath = "//span[@id='select2-type_id-container']")
 	WebElement categoryfield; 
 
-@FindBy(xpath = "//input[@name='location']")
+@FindBy(xpath = "//div//input[@name='location']")
 	WebElement locationfield;  
  
 @FindBy(xpath = "//div//input[@name='latitude']")
@@ -44,6 +44,8 @@ WebElement contenttoolbar;
 
 @FindBy(xpath = "//div//input[@name='loan_book_size']")
 	WebElement loanbooksizefield; 
+@FindBy(xpath="//div//label[text()='Investor %']")
+	WebElement inverstotext;
     
 @FindBy(xpath = "//div//button[@name='submit']")
 	WebElement savebtn;  
@@ -73,17 +75,25 @@ public void addLoanbookForm(String title,String content,String location,String l
 		javascript.executeScript("arguments[0].scrollIntoView(true);", contenttoolbar );
 	
 	contentield.sendKeys(content);
-	
-		javascript.executeScript("arguments[0].scrollIntoView(true);", location );
-	locationfield.sendKeys(location);
-// 	longifield.sendKeys(lat);
-// 	longifield.sendKeys(longi);
-// //for scrolling upto price locator 
-// 		JavascriptExecutor  javascript1=(JavascriptExecutor )driver;
-// 		javascript1.executeScript("arguments[0].scrollIntoView(true);", pricefield );
 
-// pricefield.sendKeys(price);
-// loanbooksizefield.sendKeys(lbsize);
+		javascript.executeScript("arguments[0].scrollIntoView(true);", locationfield );
+		help.explicitWaitOnVisibility_Custom(driver, locationfield, 10);
+
+	locationfield.sendKeys(location);
+
+		javascript.executeScript("arguments[0].scrollIntoView(true);", pricefield );
+
+	latifield.sendKeys(lat);
+
+	longifield.sendKeys(longi);
+
+	pricefield.sendKeys(price);
+	
+		help.explicitWaitOnVisibility_Custom(driver, loanbooksizefield, 10);
+
+	loanbooksizefield.sendKeys(lbsize);
+
+	javascript.executeScript("arguments[0].scrollIntoView(true);", inverstotext );
 
 }
 
