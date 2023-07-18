@@ -45,7 +45,7 @@ WebElement contenttoolbar;
 @FindBy(xpath = "//div//input[@name='loan_book_size']")
 	WebElement loanbooksizefield; 
 @FindBy(xpath="//div//label[text()='Investor %']")
-	WebElement inverstotext;
+	WebElement inverstortext;
     
 @FindBy(xpath = "//div//button[@name='submit']")
 	WebElement savebtn;  
@@ -88,12 +88,15 @@ public void addLoanbookForm(String title,String content,String location,String l
 	longifield.sendKeys(longi);
 
 	pricefield.sendKeys(price);
-	
+
 		help.explicitWaitOnVisibility_Custom(driver, loanbooksizefield, 10);
 
 	loanbooksizefield.sendKeys(lbsize);
 
-	javascript.executeScript("arguments[0].scrollIntoView(true);", inverstotext );
+		javascript.executeScript("arguments[0].scrollIntoView(true);", inverstortext );
+
+		help.explicitWaitOnVisibility_Custom(driver, savebtn, 10);
+
 
 }
 
