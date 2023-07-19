@@ -3,7 +3,7 @@
 <suite name="LoanBookForSale WebApplication Test Automation Test Suite">
 
 	<listeners>
-		<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
+		<listener class-name="com.qa.extentReportListner.ExtentReportListner" />
 	</listeners>
 
 
@@ -12,7 +12,7 @@
 			<class name="loanbookforsale.qa.test.HomePageTest"></class>
 			<class name="loanbookforsale.qa.test.SignInTest"></class>
 			<class name="loanbookforsale.qa.test.LoanbooksPageTest"></class>
-            <class name="loanbookforsale.qa.test.PricingPageTest"></class>
+            <class name="loanbookforsale.qa.test.PlaceAdPageTest"></class>
 		</classes>
 	</test>
 </suite>
