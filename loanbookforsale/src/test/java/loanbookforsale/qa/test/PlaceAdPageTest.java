@@ -51,9 +51,9 @@ public Object[][] getAddaLaonbookdata(){
 }
 
 @Test (priority=1,dataProvider="getAddaLaonbookdata")
-public void validateCreateAddLoanbook(String Title,String Content,String Location,String Latitude,String Longitude,String Price,String LoanBookSize ){
+public void validateCreateAddLoanbook(String Title,String Content,String Aggregator,String Location,String Latitude,String Longitude,String Price,String LoanBookSize ){
     
-    placeadpage.addLoanbookForm(Title, Content, Location, Latitude, Longitude, Price, LoanBookSize);    
+    placeadpage.addLoanbookForm(Title, Content, Aggregator, Location, Latitude, Longitude, Price, LoanBookSize);    
 
 }
 

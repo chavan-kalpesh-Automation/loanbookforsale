@@ -1,9 +1,11 @@
 package loanbookforsale.qa.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import loanbookforsale.qa.base.Helper;
 import loanbookforsale.qa.base.TestBase;
@@ -24,7 +26,7 @@ WebElement contenttoolbar;
 @FindBy(xpath = "//div[@id='multiple-upload']")
 	WebElement imagefield;
 
-@FindBy(xpath = "//span[@id='select2-category_id-container']")
+@FindBy(xpath = "//label[text()='Aggregator']")
 	WebElement aggregatorfield;
 
 @FindBy(xpath = "//span[@id='select2-type_id-container']")
@@ -62,7 +64,7 @@ public String  verifyPlaceAdPageTitle(){
 return driver.getTitle();
 }
 
-public void addLoanbookForm(String title,String content,String location,String lat,String longi,String price,String lbsize){
+public void addLoanbookForm(String title,String content,String aggregator,String location,String lat,String longi,String price,String lbsize){
 
 	
 
@@ -76,9 +78,17 @@ public void addLoanbookForm(String title,String content,String location,String l
 	
 	contentield.sendKeys(content);
 
+		javascript.executeScript("arguments[0].scrollIntoView(true);",imagefield);
+		help.explicitWaitOnVisibility_Custom(driver, aggregatorfield, 20);
+		Select select=new Select(driver.findElement(By.name("category_id")));
+		// select.selectByValue(aggregator);
+		select.selectByVisibleText(aggregator);
+
 		javascript.executeScript("arguments[0].scrollIntoView(true);", locationfield );
 		help.explicitWaitOnVisibility_Custom(driver, locationfield, 10);
-
+		
+	
+	
 	locationfield.sendKeys(location);
 
 		javascript.executeScript("arguments[0].scrollIntoView(true);", pricefield );
