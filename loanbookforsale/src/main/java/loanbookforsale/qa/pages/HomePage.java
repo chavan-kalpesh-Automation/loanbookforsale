@@ -59,6 +59,9 @@ public class HomePage extends TestBase {
 	@FindBy(xpath="//a[text()=' Place Ad']")
 	WebElement placeAd;
 
+	@FindBy(xpath="//a[text()=' Contact Us ']")
+	WebElement contacUsBtn;
+
 	// Initializing the page objects
 
 	public HomePage() {
@@ -90,6 +93,10 @@ public class HomePage extends TestBase {
 	public SignInPage signinbtn() {
 		signInBtn.click();
 		return new SignInPage();
+	}
+	public ContactUsPage clickOnContactUsPage(){
+		contacUsBtn.click();
+		return new ContactUsPage();
 	}
 	public PlaceAdPage	clickonplaceadbtn(){
 		Helper helper=new Helper();

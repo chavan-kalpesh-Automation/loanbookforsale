@@ -22,7 +22,7 @@ WebElement contenttoolbar;
 
 @FindBy(xpath = "//div//p[@class='ck-placeholder']")
 	WebElement contentield;
-//div[@class='ck ck-editor__main']
+
 @FindBy(xpath = "//div[@id='multiple-upload']")
 	WebElement imagefield;
 
@@ -79,10 +79,12 @@ public void addLoanbookForm(String title,String content,String aggregator,String
 	contentield.sendKeys(content);
 
 		javascript.executeScript("arguments[0].scrollIntoView(true);",imagefield);
+
+		
+
 		help.explicitWaitOnVisibility_Custom(driver, aggregatorfield, 20);
 		Select select=new Select(driver.findElement(By.name("category_id")));
-		// select.selectByValue(aggregator);
-		select.selectByVisibleText(aggregator);
+	select.selectByVisibleText(aggregator);
 
 		javascript.executeScript("arguments[0].scrollIntoView(true);", locationfield );
 		help.explicitWaitOnVisibility_Custom(driver, locationfield, 10);
