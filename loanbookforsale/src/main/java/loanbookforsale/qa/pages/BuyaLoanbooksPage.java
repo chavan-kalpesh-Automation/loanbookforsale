@@ -6,12 +6,15 @@ import org.openqa.selenium.support.PageFactory;
 
 import loanbookforsale.qa.base.TestBase;
 
-public class LoanbooksPage extends TestBase{
+public class BuyaLoanbooksPage extends TestBase {
+
+
 	@FindBy(xpath = "//div//h2[text()='Buy a LoanBook']")
 	WebElement buyloanbookpagetitle;
 
 	@FindBy(name = "location")
 	WebElement location;
+	
 	@FindBy(xpath = "//select[@id='minprice']")
 	WebElement minprice;
 
@@ -40,11 +43,11 @@ public class LoanbooksPage extends TestBase{
 	WebElement franchise;
 	
 	// Initialization of page Object
-	public LoanbooksPage() {
+	public BuyaLoanbooksPage() {
 		PageFactory.initElements(driver, this);
 	}
+
 	//Page Actions
-	
 	public String validateloanbookspagetitle() {
 		return driver.getTitle();
 		
@@ -52,7 +55,9 @@ public class LoanbooksPage extends TestBase{
 	public boolean verifyloanbookpagetitletext() {
 		return buyloanbookpagetitle.isDisplayed();
 	}
+	
 	public void buyloanbooksearch(String locations,String pricemin,String pricemax,String aggregators) {
+		
 		location.sendKeys(locations);
 		minprice.sendKeys(pricemin);
 		maxprice.sendKeys(pricemax);

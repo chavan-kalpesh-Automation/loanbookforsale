@@ -36,7 +36,7 @@ public class SignInPage extends TestBase {
 
 	@FindBy(xpath = "//div[@class='rc-anchor-normal-footer']")
 	WebElement reCaptchalocator;
-
+	
 	// Initialization of page Object
 	public SignInPage() {
 		PageFactory.initElements(driver, this);
