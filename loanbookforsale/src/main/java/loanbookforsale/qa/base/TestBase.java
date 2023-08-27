@@ -56,7 +56,7 @@ public class TestBase {
 			
 			//code change after chrome version change (115)
 			ChromeOptions co=new ChromeOptions();
-			co.setBrowserVersion("115");
+			co.setBrowserVersion("116");
 
 
 
