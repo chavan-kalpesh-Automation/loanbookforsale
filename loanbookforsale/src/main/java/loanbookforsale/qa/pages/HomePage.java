@@ -8,7 +8,7 @@ import loanbookforsale.qa.base.Helper;
 import loanbookforsale.qa.base.TestBase;
 
 public class HomePage extends TestBase {
-
+	Helper	helper;
 	// PageFactory
 
 	@FindBy(xpath = "//img[@class='logo']")
@@ -62,6 +62,12 @@ public class HomePage extends TestBase {
 	@FindBy(xpath="//a[text()=' Contact Us ']")
 	WebElement contacUsBtn;
 
+	@FindBy(xpath="//a[text()=' Loanbooks ']")
+	WebElement loanbookstitle;//trigger
+
+	@FindBy(xpath="//a[text()=' Buy a LoanBook ']")
+	WebElement buyALoanbook;//target
+
 	// Initializing the page objects
 
 	public HomePage() {
@@ -85,7 +91,6 @@ public class HomePage extends TestBase {
 	}
 
 	public boolean priumiumadbtn() {
-
 		return primiumad.isDisplayed();
 
 	}
@@ -99,11 +104,16 @@ public class HomePage extends TestBase {
 		return new ContactUsPage();
 	}
 	public PlaceAdPage	clickonplaceadbtn(){
-		Helper helper=new Helper();
+		 helper=new Helper();
 		helper.explicitWaitOnVisibility_Custom(driver, placeAd, 3);
 		placeAd.click();
 		return new PlaceAdPage();
 
+	}
+	public BuyaLoanbooksPage clickonBuyaLoanBookbtn(){
+		helper=new Helper(); 
+		helper.actions_ClassMethods(loanbookstitle, buyALoanbook);
+		return new BuyaLoanbooksPage();
 	}
 		
 }
