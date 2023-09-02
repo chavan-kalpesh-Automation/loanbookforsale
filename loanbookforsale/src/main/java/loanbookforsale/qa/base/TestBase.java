@@ -11,6 +11,11 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+<<<<<<< HEAD
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+=======
+>>>>>>> 3adb8a6f5d736314de11955abbffb93351bb4801
 
 public class TestBase {
 	public static Properties prop;
@@ -54,6 +59,13 @@ public class TestBase {
 			
 			// System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			
+<<<<<<< HEAD
+			// WebDriverManager.chromedriver().setup();
+
+			// Change due to change in version from chrome browser 
+			ChromeOptions co= new ChromeOptions();
+			co.setBrowserVersion("116");
+=======
 			//code change after chrome version change (115)
 			ChromeOptions co=new ChromeOptions();
 			co.setBrowserVersion("116");
@@ -61,6 +73,7 @@ public class TestBase {
 
 
 			// WebDriverManager.chromedriver().setup();
+>>>>>>> 3adb8a6f5d736314de11955abbffb93351bb4801
 			
 			driver = new ChromeDriver();
 		}

@@ -27,7 +27,7 @@ public class TestUtil extends TestBase{
         driver.switchTo().frame("framename");
     }
 
-    public  void takeScreenshotAtEndOfTestCase(){
+    public  static void takeScreenshotAtEndOfTestCase() throws IOException{
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
         // System.out.println(currentDir);
