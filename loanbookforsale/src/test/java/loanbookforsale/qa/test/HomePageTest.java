@@ -8,11 +8,12 @@ import org.testng.annotations.Test;
 import loanbookforsale.qa.base.TestBase;
 import loanbookforsale.qa.pages.HomePage;
 import loanbookforsale.qa.pages.SignInPage;
+import loanbookforsale.qa.util.TestUtil;
 
 public class HomePageTest extends TestBase {
 	HomePage homepage;
 	SignInPage signIn;
-
+TestUtil util;
 	public HomePageTest() {
 		super();
 

@@ -4,16 +4,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import loanbookforsale.qa.base.Helper;
 import loanbookforsale.qa.base.TestBase;
 
 public class HomePage extends TestBase {
-
+	Helper	helper;
 	// PageFactory
 
 	@FindBy(xpath = "//img[@class='logo']")
 	WebElement loanbooklogo;
 
-	@FindBy(xpath = "//a[text()='Sign In']") //
+	@FindBy(xpath = "//a[text()='Sign In']") 
 	WebElement signInBtn;
 
 	@FindBy(xpath = "//li[@class='menu-item-has-children']//child::a[@href='https://loanbookforsale.com.au/loanbook-opportunity?layout=full&type=loanbook']")
@@ -55,6 +56,18 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//div[@class='pricing-wrap  standard-pr ']//a")
 	WebElement primiumad;
 
+	@FindBy(xpath="//a[text()=' Place Ad']")
+	WebElement placeAd;
+
+	@FindBy(xpath="//a[text()=' Contact Us ']")
+	WebElement contacUsBtn;
+
+	@FindBy(xpath="//a[text()=' Loanbooks ']")
+	WebElement loanbookstitle;//trigger
+
+	@FindBy(xpath="//a[text()=' Buy a LoanBook ']")
+	WebElement buyALoanbook;//target
+
 	// Initializing the page objects
 
 	public HomePage() {
@@ -78,14 +91,29 @@ public class HomePage extends TestBase {
 	}
 
 	public boolean priumiumadbtn() {
-
 		return primiumad.isDisplayed();
 
 	}
 
 	public SignInPage signinbtn() {
 		signInBtn.click();
-		
 		return new SignInPage();
 	}
+	public ContactUsPage clickOnContactUsPage(){
+		contacUsBtn.click();
+		return new ContactUsPage();
+	}
+	public PlaceAdPage	clickonplaceadbtn(){
+		 helper=new Helper();
+		helper.explicitWaitOnVisibility_Custom(driver, placeAd, 3);
+		placeAd.click();
+		return new PlaceAdPage();
+
+	}
+	public BuyaLoanbooksPage clickonBuyaLoanBookbtn(){
+		helper=new Helper(); 
+		helper.actions_ClassMethods(loanbookstitle, buyALoanbook);
+		return new BuyaLoanbooksPage();
+	}
+		
 }

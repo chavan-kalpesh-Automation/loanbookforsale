@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LoanBookForSale WebApplication Test Automation Test Suite">
+
+	<listeners>
+		<listener class-name="loanbookforsale.qa.extentReportListner.ExtentReportListner" />
+	</listeners>
+
+
+	<test name="LoanBookForSale WebApp Test Cases">
+		<classes>
+			<class name="loanbookforsale.qa.test.HomePageTest"></class>
+			<class name="loanbookforsale.qa.test.SignInTest"></class>
+			<class name="loanbookforsale.qa.test.LoanbooksPageTest"></class>
+            <class name="loanbookforsale.qa.test.PlaceAdPageTest"></class>
+		</classes>
+	</test>
+</suite>
