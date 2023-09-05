@@ -56,7 +56,7 @@ public void setup(){
 
 	@AfterMethod
 	public void teardown(){
-		driver.quit();
+		// driver.quit();
 
 	}
 	}

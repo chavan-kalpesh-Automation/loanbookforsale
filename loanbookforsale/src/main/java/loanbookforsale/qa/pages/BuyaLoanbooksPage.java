@@ -3,6 +3,7 @@ package loanbookforsale.qa.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import loanbookforsale.qa.base.TestBase;
 
@@ -21,7 +22,7 @@ public class BuyaLoanbooksPage extends TestBase {
 	@FindBy(xpath = "//select[@id='maxprice']")
 	WebElement maxprice;
 
-	@FindBy(xpath = "//select[@id='ptypes']")
+	@FindBy(xpath = "//select[@name='aggregator']")
 	WebElement aggregator;
 
 	@FindBy(xpath = "//a[@class='ad-search']")
@@ -59,10 +60,18 @@ public class BuyaLoanbooksPage extends TestBase {
 	public void buyloanbooksearch(String locations,String pricemin,String pricemax,String aggregators) {
 		
 		location.sendKeys(locations);
-		minprice.sendKeys(pricemin);
-		maxprice.sendKeys(pricemax);
-		aggregator.sendKeys(aggregators);
+
+		Select mindrop=new Select(minprice);
+		mindrop.selectByValue(pricemin);
+		
+		Select maaxdrop=new Select(maxprice);
+		maaxdrop.selectByValue(pricemax);
+
+		Select aggdrop=new Select(aggregator);
+		aggdrop.selectByVisibleText(aggregators);
+
 		searchbtn.click();
+
 		
 	}
 	
