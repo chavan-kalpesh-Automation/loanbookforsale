@@ -44,6 +44,8 @@ public class ContactUsPage extends TestBase{
         subjectfield.sendKeys(subject);
         phonenumberfield.sendKeys(phone);
         messagefield.sendKeys(message);
+        //Comment this click due to script run on live project 
+        // sendmsgbtn.click();   
 
     }
 }
