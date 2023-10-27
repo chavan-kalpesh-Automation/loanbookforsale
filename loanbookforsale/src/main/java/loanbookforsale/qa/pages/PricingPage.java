@@ -19,6 +19,12 @@ public class PricingPage extends TestBase {
 	WebElement preminumad;
 			
 	
+	//initialization of page objects 
+	public PricingPage() {
+		PageFactory.initElements(driver,this);
+
+	}
+	//page actions 
 	
 	
 }
