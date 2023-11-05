@@ -1,20 +1,24 @@
 package loanbookforsale.qa.test;
 
-public class PricingPageTest extends TestBase{
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-	
-	
+import loanbookforsale.qa.base.TestBase;
+
+public class PricingPageTest extends TestBase {
+
 	public PricingPageTest() {
 		super();
 	}
-@BeforeMethod
-public void setup() {
-	initilization();
-	
-}
+
+	@BeforeMethod
+	public void setup() {
+		initialization();
+
+	}
+
 @Test
 public void test() {
-	Sysout
 }
 
 }
