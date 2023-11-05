@@ -1,49 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <listeners>
+    <listener class-name="loanbookforsale.qa.extentReportListner.ListnerClass"/>
+  </listeners>
+  <test thread-count="5" name="TestListner(failed)">
     <classes>
-      <class name="loanbookforsale.qa.test.PlaceAdPageTest">
-        <methods>
-          <include name="validateCreateAddLoanbook"/>
-          <include name="verifyPlaceAdPageTitleTest"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- loanbookforsale.qa.test.PlaceAdPageTest -->
       <class name="loanbookforsale.qa.test.HomePageTest">
         <methods>
-          <include name="loanbookLogoTest"/>
           <include name="setup"/>
-          <include name="signInBtnTest"/>
-          <include name="homePageTitleTest"/>
+          <include name="testfailed123"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- loanbookforsale.qa.test.HomePageTest -->
-      <class name="loanbookforsale.qa.test.SignInTest">
-        <methods>
-          <include name="loginTest"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="afterLoginUsrNameTest"/>
-          <include name="signInPageTitleTest"/>
-        </methods>
-      </class> <!-- loanbookforsale.qa.test.SignInTest -->
-      <class name="loanbookforsale.qa.test.BuyaLoanbooksPageTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="buyaLoanbookSearchTest"/>
-          <include name="setup"/>
-          <include name="loanbookpagetitleTest"/>
-          <include name="loanbookspagetitlePageTest"/>
-        </methods>
-      </class> <!-- loanbookforsale.qa.test.BuyaLoanbooksPageTest -->
-      <class name="loanbookforsale.qa.test.PricingPageTest">
-        <methods>
-          <include name="test"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- loanbookforsale.qa.test.PricingPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- TestListner(failed) -->
 </suite> <!-- Failed suite [Suite] -->

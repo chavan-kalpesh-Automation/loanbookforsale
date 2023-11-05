@@ -45,6 +45,11 @@ TestUtil util;
 	public void signInBtnTest() {
 		signIn = homepage.signinbtn();
 	}
+	@Test(priority=4)
+	public void testfailed123() {
+		driver.findElement(null);
+		
+	}
 
 	@AfterMethod
 	public void teardown() {
