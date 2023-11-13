@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="loanbookforsale.qa.test.SignInTest">
+      <class name="loanbookforsale.qa.test.ContactUsPageTest">
         <methods>
-          <include name="tearDown"/>
+          <include name="contactUsFormTest"/>
           <include name="setup"/>
-          <include name="afterLoginUsrNameTest"/>
         </methods>
-      </class> <!-- loanbookforsale.qa.test.SignInTest -->
+      </class> <!-- loanbookforsale.qa.test.ContactUsPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
