@@ -28,11 +28,9 @@ public class ContactUsPage extends TestBase {
 	@FindBy(xpath = "//div[@class='form-actions form-group']")
 	WebElement sendmsgbtn;
 
-	@FindBy(xpath = "//div[@class='contact-info']//div[text()=' info@loanbookforsale.com.au ']")
+	@FindBy(xpath = "//div[@class='contact-info']//h4[text()='Email']/following-sibling::text()")
 	WebElement emailtext;
 
-	
-	
 //Initializing Page Object 
 	public ContactUsPage() {
 		PageFactory.initElements(driver, this);
@@ -52,5 +50,12 @@ public class ContactUsPage extends TestBase {
 		// Comment this click due to script run on live project
 		// sendmsgbtn.click();
 
+	}
+
+	public String validateEmailOnContactUsForm() {
+		
+		String email = emailtext.getText();
+		
+		return email;
 	}
 }

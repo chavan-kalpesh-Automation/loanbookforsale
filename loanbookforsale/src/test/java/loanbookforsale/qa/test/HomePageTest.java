@@ -13,7 +13,8 @@ import loanbookforsale.qa.util.TestUtil;
 public class HomePageTest extends TestBase {
 	HomePage homepage;
 	SignInPage signIn;
-TestUtil util;
+	TestUtil util;
+
 	public HomePageTest() {
 		super();
 
@@ -28,14 +29,14 @@ TestUtil util;
 	}
 
 //Test Cases
-	@Test(priority=1)
+	@Test(priority = 1)
 	public void homePageTitleTest() {
 		String title = homepage.validateHomePageTitle();
 		Assert.assertEquals(title, "Loan Book For Sale - buy a trail book",
 				"Home Page Title Does Not match with actual ");
 	}
 
-	@Test(priority=2)
+	@Test(priority = 2)
 	public void loanbookLogoTest() {
 		boolean logo = homepage.verifyLogoOfThePage();
 		Assert.assertTrue(logo);
@@ -45,10 +46,11 @@ TestUtil util;
 	public void signInBtnTest() {
 		signIn = homepage.signinbtn();
 	}
-	@Test(priority=4)
+
+	@Test(priority = 4)
 	public void testfailed123() {
 		driver.findElement(null);
-		
+
 	}
 
 	@AfterMethod

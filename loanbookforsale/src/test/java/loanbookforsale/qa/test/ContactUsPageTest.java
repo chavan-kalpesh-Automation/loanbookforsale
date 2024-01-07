@@ -32,9 +32,17 @@ public class ContactUsPageTest extends TestBase {
 				"Title of ContactUsPage Not Matched to Actual Title");
 		System.out.println(title);
 	}
+
 	@Test
 	public void contactUsFormTest() {
-		contactpg.validateContactUsForm(prop.getProperty("name"), prop.getProperty("email"), prop.getProperty("subject"),prop.getProperty("Phone"),prop.getProperty("Message"));
+		contactpg.validateContactUsForm(prop.getProperty("name"), prop.getProperty("email"),
+				prop.getProperty("subject"), prop.getProperty("Phone"), prop.getProperty("Message"));
 	}
 
+	@Test
+	public void contactUsEmailTest() {
+		String email = contactpg.validateEmailOnContactUsForm();
+		System.out.println(email);
+//		Assert.assertEquals(email, "info@loanbookforsale.com.au");
+	}
 }

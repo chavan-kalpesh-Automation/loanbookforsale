@@ -9,23 +9,30 @@ import loanbookforsale.qa.base.TestBase;
 public class PricingPage extends TestBase {
 	@FindBy(xpath = "//a[contains(@href,'pricing')]")
 	WebElement pricingtitlebtn;
-	
-	@FindBy(xpath="//h2[text()='See Our Packages']")
+
+	@FindBy(xpath = "//h2[text()='See Our Packages']")
 	WebElement pricepgtitle;
 
-	@FindBy(xpath="//h4[text()='Standard ad']")
+	@FindBy(xpath = "//h4[text()='Standard ad']")
 	WebElement stdad;
 
-	@FindBy(xpath="//h4[text()='Premium ad']")
+	@FindBy(xpath = "//h4[text()='Premium ad']")
 	WebElement preminumad;
-			
-	
-	//initialization of page objects 
+
+	// initialization of page objects
 	public PricingPage() {
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
 
 	}
-	//page actions 
-	
+	// page actions
+
+	public String validatePricePageTitle() {
+
+		return driver.getTitle();
+	}
+	public boolean stdBtnIsAvailabeorNot() {
+		
+	return stdad.isDisplayed();
+	}
 	
 }

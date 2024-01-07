@@ -5,7 +5,7 @@
     <classes>
       <class name="loanbookforsale.qa.test.ContactUsPageTest">
         <methods>
-          <include name="contactUsFormTest"/>
+          <include name="contactUsEmailTest"/>
           <include name="setup"/>
         </methods>
       </class> <!-- loanbookforsale.qa.test.ContactUsPageTest -->
